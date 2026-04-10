@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Commit No.001 | index.html history</title>
+    <style>
+        :root {
+            --bg: #f4efe8;
+            --panel: #fffaf4;
+            --panel-strong: #ffffff;
+            --text: #2e2721;
+            --sub: #6f6458;
+            --line: #dfd2c2;
+            --accent: #9a3d1a;
+            --accent-soft: #f6dfd5;
+            --shadow: 0 12px 30px rgba(70, 44, 18, 0.08);
+            --radius: 18px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(circle at top left, #fff7ee 0, #f4efe8 40%, #efe6dc 100%);
+            color: var(--text);
+            font-family: "Hiragino Sans", "Yu Gothic", "Noto Sans JP", sans-serif;
+        }
+
+        .page {
+            max-width: 1480px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        .hero,
+        .preview {
+            background: rgba(255, 250, 244, 0.88);
+            border: 1px solid rgba(223, 210, 194, 0.9);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero {
+            padding: 24px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 0.08em;
+        }
+
+        .latest-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 10px;
+            border-radius: 999px;
+            background: #2f5f4b;
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 900;
+        }
+
+        h1 {
+            margin: 16px 0 8px;
+            font-size: clamp(28px, 5vw, 44px);
+            line-height: 1.1;
+        }
+
+        .lede {
+            margin: 0;
+            color: var(--sub);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .meta-card {
+            padding: 14px 16px;
+            background: var(--panel-strong);
+            border: 1px solid var(--line);
+            border-radius: 14px;
+        }
+
+        .meta-label {
+            display: block;
+            margin-bottom: 6px;
+            color: var(--sub);
+            font-size: 12px;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+        }
+
+        .meta-value {
+            font-size: 16px;
+            font-weight: 900;
+            line-height: 1.45;
+            word-break: break-word;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .nav-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 0 16px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: #ffffff;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        .nav-button.disabled {
+            background: #f3ebe2;
+            color: #a09182;
+            pointer-events: none;
+        }
+
+        .preview {
+            margin-top: 18px;
+            padding: 14px;
+        }
+
+        .preview-head {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .preview-title {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        .preview-note {
+            margin: 0;
+            color: var(--sub);
+            font-size: 13px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 720px;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            background: #ffffff;
+        }
+
+        @media (max-width: 720px) {
+            .page {
+                padding: 16px;
+            }
+
+            .hero {
+                padding: 18px;
+            }
+
+            iframe {
+                height: 560px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <section class="hero">
+            <div class="eyebrow">INDEX VERSION VIEWER</div>
+            <h1>Commit No.001 <span class="latest-badge">LATEST</span></h1>
+            <p class="lede">index.html のこの時点の状態を、コミット情報と一緒に確認できます。</p>
+
+            <div class="meta">
+                <article class="meta-card">
+                    <span class="meta-label">COMMIT NO</span>
+                    <div class="meta-value">001 / 001</div>
+                </article>
+                <article class="meta-card">
+                    <span class="meta-label">HASH</span>
+                    <div class="meta-value">c73b527</div>
+                </article>
+                <article class="meta-card">
+                    <span class="meta-label">DATE</span>
+                    <div class="meta-value">2026-04-10 23:58:00</div>
+                </article>
+                <article class="meta-card">
+                    <span class="meta-label">AUTHOR</span>
+                    <div class="meta-value">katsuan</div>
+                </article>
+                <article class="meta-card">
+                    <span class="meta-label">MESSAGE</span>
+                    <div class="meta-value">[add]first</div>
+                </article>
+            </div>
+
+            <div class="actions">
+                <span class="nav-button disabled">← 前のコミット</span>
+                <a class="nav-button" href="../history.html">一覧へ戻る</a>
+                <a class="nav-button" href="snapshots/commit-001.html">この版を単体で開く</a>
+                <span class="nav-button disabled">次のコミット →</span>
+            </div>
+        </section>
+
+        <section class="preview">
+            <div class="preview-head">
+                <h2 class="preview-title">Preview</h2>
+                <p class="preview-note">下のフレームに、そのコミット時点の index.html を表示しています。</p>
+            </div>
+            <iframe src="snapshots/commit-001.html" title="Commit No.001 preview"></iframe>
+        </section>
+    </main>
+</body>
+</html>
