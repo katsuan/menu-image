@@ -12,7 +12,6 @@
 
             --bg-page: #111111;
             --bg-canvas: #181312;
-            --bg-card: #221a18;
             --bg-soft: #2b211f;
             --bg-soft-2: #332724;
 
@@ -25,11 +24,7 @@
             --step2-main: #b996ff;
             --step2-soft: #35284f;
 
-            --recommend-main: #e1b15c;
-            --recommend-soft: #4a3820;
-
             --line: #4a3a34;
-            --line-strong: #5d4941;
             --shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
 
             --radius-xl: 20px;
@@ -62,7 +57,11 @@
             min-height: 100vh;
             display: grid;
             place-items: start center;
-            padding: 8px 0;
+            padding: 12px 0;
+            background:
+                radial-gradient(circle at top left, rgba(255, 112, 77, 0.16), transparent 24%),
+                radial-gradient(circle at top right, rgba(225, 177, 92, 0.14), transparent 22%),
+                linear-gradient(180deg, #0f0d0c 0%, #171211 48%, #0f0d0c 100%);
         }
 
         .viewport {
@@ -74,11 +73,25 @@
             background: var(--bg-canvas);
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
-            border: 1px solid #d8ccbc;
+            border: 1px solid #3f322e;
+            border-radius: 28px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.34);
         }
 
         .viewport::-webkit-scrollbar {
             display: none;
+        }
+
+        .viewport::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 180px;
+            height: 100%;
+            background: linear-gradient(90deg, rgba(24, 19, 18, 0) 0%, rgba(24, 19, 18, 0.94) 100%);
+            pointer-events: none;
+            z-index: 12;
         }
 
         .track {
@@ -104,15 +117,15 @@
         }
 
         .section-meat {
-            width: 800px;
+            width: 980px;
             padding: 12px;
             display: grid;
-            grid-template-rows: auto 1fr;
-            gap: 10px;
+            grid-template-rows: 186px 42px 1fr;
+            gap: 6px;
         }
 
         .section-toppings {
-            width: 500px;
+            width: 920px;
             padding: 12px;
             display: grid;
             background: #221a2d;
@@ -121,22 +134,11 @@
             gap: 10px;
         }
 
-        .section-recommend {
-            width: 280px;
-            padding: 12px;
-            display: grid;
-            background: #2c2417;
-            border: 1px solid #5f4b25;
-            grid-template-rows: 1fr;
-            gap: 10px;
-        }
-
         .section-head {
             display: flex;
             align-items: end;
             justify-content: space-between;
             gap: 12px;
-            padding-right: 82px;
         }
 
         .section-title-wrap {
@@ -167,22 +169,24 @@
             color: var(--step2-main);
         }
 
-        .selector-badge.recommend {
-            background: var(--recommend-soft);
-            color: var(--recommend-main);
+        .hero-title {
+            margin: 0;
+            font-size: 31px;
+            line-height: 1.02;
+            font-weight: 900;
+            letter-spacing: 0.01em;
         }
 
-        .hero-title,
         .section-title {
             margin: 0;
-            font-size: 24px;
-            line-height: 1.2;
+            font-size: 28px;
+            line-height: 1.15;
             font-weight: 900;
         }
 
         .hero-price {
-            margin: 2px 0 0;
-            font-size: 18px;
+            margin: 4px 0 0;
+            font-size: 22px;
             line-height: 1;
             font-weight: 900;
             color: var(--step1-main);
@@ -197,52 +201,28 @@
 
         .meat-grid {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(5, minmax(0, 1fr));
             gap: var(--inner-gap);
             min-height: 0;
         }
 
-        .selector-card,
         .meat-card,
-        .group-card,
-        .recommend-card {
+        .group-card {
             background: var(--bg-soft);
             border: 1px solid var(--line);
             border-radius: var(--radius-lg);
             min-height: 0;
         }
 
-        .selector-card {
-            background: #3a2724;
-            border: 1px solid #5b403b;
-            padding: 12px 10px;
-            display: grid;
-            grid-template-rows: auto auto 1fr;
-            gap: 10px;
-        }
-
-        .selector-title {
-            margin: 0;
-            font-size: 20px;
-            line-height: 1.25;
-            font-weight: 900;
-        }
-
-        .selector-guide {
-            margin: 0;
-            align-self: end;
-            font-size: 11px;
-            line-height: 1.5;
-            color: var(--text-sub);
-            font-weight: 700;
-        }
-
         .meat-card {
             padding: 8px 8px 10px;
             display: grid;
-            grid-template-rows: auto 1fr;
+            grid-template-rows: auto auto 1fr;
             gap: 6px;
+            background:
+                linear-gradient(180deg, rgba(70, 46, 42, 0.98) 0%, rgba(44, 31, 28, 0.98) 100%);
+            border-color: #5c4741;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
         }
 
         .meat-top {
@@ -254,7 +234,7 @@
 
         .meat-name {
             margin: 0;
-            font-size: 17px;
+            font-size: 16px;
             line-height: 1.2;
             font-weight: 900;
         }
@@ -262,7 +242,7 @@
         .meat-price {
             flex: 0 0 auto;
             margin: 0;
-            font-size: 16px;
+            font-size: 15px;
             line-height: 1;
             font-weight: 900;
             color: var(--step1-main);
@@ -275,18 +255,18 @@
         }
 
         .meat-photo {
-            width: 180px;
-            height: 120px;
-            border-radius: 50%;
+            width: 148px;
+            height: 94px;
+            border-radius: 18px;
             object-fit: cover;
             display: block;
-            border: 2px solid #fff;
-            background: #f3eadf;
+            border: 1px solid #5d4941;
+            background: #2b211f;
         }
 
         .toppings-layout {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 10px;
             min-height: 0;
         }
@@ -294,8 +274,14 @@
         .group-card {
             padding: 10px;
             display: grid;
-            grid-template-rows: auto 1fr;
+            grid-template-rows: 50px 1fr;
             gap: 8px;
+        }
+
+        .group-head {
+            display: grid;
+            align-content: start;
+            gap: 2px;
         }
 
         .group-title {
@@ -304,6 +290,14 @@
             line-height: 1.2;
             font-weight: 900;
             color: var(--step2-main);
+        }
+
+        .group-note {
+            margin: 2px 0 0;
+            color: var(--text-sub);
+            font-size: 10px;
+            line-height: 1.35;
+            font-weight: 700;
         }
 
         .button-list {
@@ -321,7 +315,7 @@
             grid-template-columns: 1fr auto;
             gap: 8px;
             align-items: center;
-            padding: 14px 10px;
+            padding: 12px 12px;
             border-radius: var(--radius-md);
             background: var(--bg-soft-2);
             border: 1px solid var(--line);
@@ -334,24 +328,26 @@
             font-weight: 800;
         }
 
+        .menu-copy {
+            display: grid;
+            gap: 2px;
+            min-width: 0;
+        }
+
+        .menu-note {
+            margin: 0;
+            color: var(--text-sub);
+            font-size: 10px;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+
         .menu-price {
             font-size: 14px;
             line-height: 1;
             font-weight: 900;
             color: var(--step2-main);
             white-space: nowrap;
-        }
-
-        .sub-split {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
-            min-height: 0;
-            align-content: start;
-        }
-
-        .sub-block {
-            min-width: 0;
         }
 
         .sub-block-title {
@@ -361,123 +357,240 @@
             font-weight: 900;
             color: var(--step2-main);
         }
-
-        .chip-list {
-            display: grid;
-            gap: 6px;
-            align-content: start;
-        }
-
-        .chip {
-            padding: 8px 10px;
-            border-radius: var(--radius-md);
-            background: var(--bg-soft-2);
-            border: 1px solid var(--line);
-            font-size: 12px;
-            line-height: 1.25;
-            font-weight: 800;
-            white-space: nowrap;
+        .hero-title,
+        .section-title,
+        .meat-name {
             color: var(--text-main);
         }
 
-        .recommend-card {
-            padding: 10px;
-            display: grid;
-            grid-template-rows: auto auto auto 1fr;
-            gap: 8px;
-            align-content: start;
-            height: 100%;
-        }
-
-        .recommend-thumb {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            display: block;
-            border-radius: 10px;
-            background: #f3eadf;
-            border: 1px solid var(--line);
-        }
-
-        .recommend-title {
-            margin: 0;
-            font-size: 16px;
-            line-height: 1.25;
-            font-weight: 900;
-            color: var(--recommend-main);
-        }
-
-        .recommend-text {
-            margin: 0;
-            font-size: 11px;
-            line-height: 1.5;
+        .section-note {
             color: var(--text-sub);
+        }
+
+        .hero-panel {
+            position: relative;
+            display: grid;
+            grid-template-columns: minmax(0, 1.55fr) 220px;
+            gap: 12px;
+            padding: 14px;
+            background:
+                linear-gradient(135deg, rgba(91, 33, 26, 0.96) 0%, rgba(39, 24, 24, 0.96) 50%, rgba(48, 26, 15, 0.96) 100%);
+            border: 1px solid #6d4034;
+            border-radius: 22px;
+            overflow: hidden;
+            height: 186px;
+        }
+
+        .hero-panel::before {
+            content: "";
+            position: absolute;
+            inset: auto -80px -70px auto;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 139, 124, 0.22) 0%, rgba(255, 139, 124, 0) 70%);
+        }
+
+        .hero-copy {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            align-content: start;
+            gap: 6px;
+        }
+
+        .hero-flavor {
+            display: inline-flex;
+            align-items: center;
+            min-height: 26px;
+            padding: 0 10px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffd9cf;
+            font-size: 11px;
+            font-weight: 800;
+        }
+
+        .hero-subcopy {
+            margin: 0;
+            max-width: 600px;
+            color: #f0d8cd;
+            font-size: 11px;
+            line-height: 1.35;
             font-weight: 700;
         }
 
-        .section-hint {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            z-index: 10;
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .hero-tag {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 8px 10px 8px 11px;
+            min-height: 24px;
+            padding: 0 10px;
             border-radius: 999px;
-            background: #ffffff;
-            border: 1px solid var(--line-strong);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-            pointer-events: none;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff1ea;
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.02em;
         }
 
-        .section-hint-text {
-            font-size: 13px;
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 10px;
+            background: rgba(15, 10, 10, 0.24);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            width: fit-content;
+        }
+
+        .hero-cta-main {
+            font-size: 14px;
+            line-height: 1.2;
             font-weight: 900;
-            color: var(--step1-main);
-            white-space: nowrap;
+            color: #fff7f1;
         }
 
-        .section-hint.step2 .section-hint-text,
-        .section-hint.step2 .section-hint-arrow {
-            color: var(--step2-main);
-        }
-
-        .section-hint.recommend .section-hint-text,
-        .section-hint.recommend .section-hint-arrow {
-            color: var(--recommend-main);
-        }
-
-        .section-hint-arrow {
+        .hero-cta-arrow {
             font-size: 16px;
             line-height: 1;
             font-weight: 900;
             color: var(--step1-main);
         }
 
-        .hero-title,
-        .section-title,
-        .selector-title,
-        .meat-name {
-            color: var(--text-main);
+        .hero-photo-card {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            align-content: start;
+            gap: 6px;
+            padding: 10px;
+            background: rgba(17, 12, 12, 0.32);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
         }
 
-        .section-note,
-        .selector-guide,
-        .recommend-text {
-            color: var(--text-sub);
-        }
-
-
-        .meat-photo {
-            width: 180px;
-            height: 120px;
-            border-radius: 50%;
+        .hero-photo {
+            width: 100%;
+            height: 118px;
             object-fit: cover;
             display: block;
-            border: 2px solid #4a3a34;
-            background: #2b211f;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
         }
+
+        .hero-stamp {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 24px;
+            padding: 0 9px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, #ff8b7c 0%, #ffb55c 100%);
+            color: #2f120f;
+            font-size: 10px;
+            font-weight: 900;
+            width: fit-content;
+        }
+
+        .choice-row-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .choice-copy {
+            display: grid;
+            gap: 2px;
+        }
+
+        .choice-title {
+            margin: 0;
+            font-size: 20px;
+            line-height: 1.1;
+            font-weight: 900;
+        }
+
+        .choice-note {
+            margin: 0;
+            color: var(--text-sub);
+            font-size: 10px;
+            line-height: 1.25;
+            font-weight: 700;
+        }
+
+        .choice-flow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 32px;
+            padding: 0 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #ffddcf;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 0.06em;
+        }
+
+        .choice-flow.step2 {
+            color: #ffcfbe;
+        }
+
+        .meat-rank {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 20px;
+            padding: 0 8px;
+            border-radius: 999px;
+            background: rgba(255, 139, 124, 0.16);
+            color: #ffb4a8;
+            font-size: 10px;
+            font-weight: 900;
+            width: fit-content;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            right: 22px;
+            bottom: 18px;
+            z-index: 16;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            min-height: 46px;
+            padding: 0 16px;
+            border-radius: 999px;
+            background: rgba(255, 250, 244, 0.96);
+            border: 1px solid rgba(255, 207, 185, 0.5);
+            color: #43231c;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
+            pointer-events: none;
+        }
+
+        .scroll-indicator-label {
+            font-size: 13px;
+            font-weight: 900;
+            white-space: nowrap;
+        }
+
+        .scroll-indicator-arrow {
+            font-size: 18px;
+            line-height: 1;
+            font-weight: 900;
+            color: var(--step1-main);
+        }
+
     </style>
 </head>
 
@@ -485,51 +598,46 @@
     <div class="viewport" aria-label="横スクロールメニュー">
         <div class="track">
             <section class="section section-meat">
-                <div class="section-head">
-                    <div class="section-title-wrap">
-                        <div class="selector-badge step1">STEP 1</div>
-                        <h1 class="hero-title">肉の種類を選ぶ</h1>
-                        <p class="selector-guide">
-                            お好きな肉をタップしてお選びください。
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="meat-grid">
-                    <aside class="selector-card">
+                <div class="hero-panel">
+                    <div class="hero-copy">
                         <div class="eyebrow">おすすめメニュー</div>
-                        <h3 class="selector-title">辛🔥スタミナ焼き</h3>
-                        <p class="hero-price">一人前 680円〜</p>
-                        <p class="selector-guide">
-                            お好きな肉をタップしてお選びください。
+                        <div>
+                            <h1 class="hero-title">辛🔥スタミナ焼き</h1>
+                            <p class="hero-price">一人前 680円〜 / 人気No.1 ホルモン 880円</p>
+                        </div>
+                        <p class="hero-subcopy">
+                            肉をひとつ選ぶだけ。濃い焼きダレとクセになる辛みで、
+                            食欲を引き上げる主役メニュー。
                         </p>
+                        <p class="hero-subcopy">
+                            甘辛だれが肉に絡んで、ごはんもお酒も止まらない。
+                            迷ったらホルモン、濃厚にいくならツラミが推し。
+                        </p>
+                        <div class="hero-tags">
+                            <span class="hero-tag">お酒がすすむ</span>
+                            <span class="hero-tag">ごはんもすすむ</span>
+                            <span class="hero-tag">一人で食べてもみんなで食べても最高！</span>
+                            <span class="hero-tag">迷ったらホルモン！</span>
+                        </div>
+
+                    </div>
+                    <aside class="hero-photo-card">
+                        <div class="hero-stamp">HOT &amp; POWER</div>
+                        <img class="hero-photo" src="src/IMG_5244.jpeg" alt="辛スタミナ焼きのイメージ" />
                     </aside>
+                </div>
 
-                    <article class="meat-card">
-                        <div class="meat-top">
-                            <h3 class="meat-name">とりもも</h3>
-                            <p class="meat-price">680円</p>
-                        </div>
-                        <div class="meat-photo-wrap">
-                            <img class="meat-photo"
-                                src="https://placehold.jp/24/f1e5d9/8b6f57/220x220.png?text=%E3%81%A8%E3%82%8A%E3%82%82%E3%82%82"
-                                alt="とりもものダミー画像" />
-                        </div>
-                    </article>
+                <div class="choice-row-head">
+                    <div class="choice-copy">
+                        <h2 class="choice-title">肉の種類を選ぶ</h2>
+                        <p class="choice-note">迷ったら人気No.1のホルモン。定番から濃厚系まで、気になる肉をそのまま選択。追加トッピングでさらに広がる美味しさ！</p>
+                    </div>
+                    <div class="choice-flow step2">追加トッピングはこちら →</div>
+                </div>
 
+                <div class="meat-grid">
                     <article class="meat-card">
-                        <div class="meat-top">
-                            <h3 class="meat-name">せせり</h3>
-                            <p class="meat-price">680円</p>
-                        </div>
-                        <div class="meat-photo-wrap">
-                            <img class="meat-photo"
-                                src="https://placehold.jp/24/f1e5d9/8b6f57/220x220.png?text=%E3%81%9B%E3%81%9B%E3%82%8A"
-                                alt="せせりのダミー画像" />
-                        </div>
-                    </article>
-
-                    <article class="meat-card">
+                        <div class="meat-rank">人気No.1</div>
                         <div class="meat-top">
                             <h3 class="meat-name">ホルモン</h3>
                             <p class="meat-price">800円</p>
@@ -540,6 +648,7 @@
                     </article>
 
                     <article class="meat-card">
+                        <div class="meat-rank">旨み濃厚</div>
                         <div class="meat-top">
                             <h3 class="meat-name">ツラミ</h3>
                             <p class="meat-price">800円</p>
@@ -552,6 +661,7 @@
                     </article>
 
                     <article class="meat-card">
+                        <div class="meat-rank">満足感</div>
                         <div class="meat-top">
                             <h3 class="meat-name">牛バラ</h3>
                             <p class="meat-price">800円</p>
@@ -562,38 +672,55 @@
                                 alt="牛バラのダミー画像" />
                         </div>
                     </article>
+
+                    <article class="meat-card">
+                        <div class="meat-rank">定番</div>
+                        <div class="meat-top">
+                            <h3 class="meat-name">とりもも</h3>
+                            <p class="meat-price">680円</p>
+                        </div>
+                        <div class="meat-photo-wrap">
+                            <img class="meat-photo"
+                                src="https://placehold.jp/24/f1e5d9/8b6f57/220x220.png?text=%E3%81%A8%E3%82%8A%E3%82%82%E3%82%82"
+                                alt="とりもものダミー画像" />
+                        </div>
+                    </article>
+
+                    <article class="meat-card">
+                        <div class="meat-rank">食感推し</div>
+                        <div class="meat-top">
+                            <h3 class="meat-name">せせり</h3>
+                            <p class="meat-price">680円</p>
+                        </div>
+                        <div class="meat-photo-wrap">
+                            <img class="meat-photo"
+                                src="https://placehold.jp/24/f1e5d9/8b6f57/220x220.png?text=%E3%81%9B%E3%81%9B%E3%82%8A"
+                                alt="せせりのダミー画像" />
+                        </div>
+                    </article>
                 </div>
 
-                <div class="section-hint" aria-hidden="true">
-                    <span class="section-hint-text">追加トッピングはこちら
-                    </span>
-                    <span class="section-hint-arrow">→</span>
-                </div>
             </section>
 
             <section class="section section-toppings">
                 <div class="section-head">
                     <div class="section-title-wrap">
-                        <div class="selector-badge step2">STEP 2</div>
+                        <div class="selector-badge step2">もっとたくさん</div>
+                        <div class="selector-badge step2">もっとおいしく</div>
                         <h2 class="section-title">追加トッピング</h2>
                         <p class="section-note">
-                            肉、その他、ちょい足しを分けて選べます。
+                            肉の追加で満足感さらにアップ！うどんは〆に！たまごやチーズで味変も！
                         </p>
                     </div>
                 </div>
 
                 <div class="toppings-layout">
                     <section class="group-card">
-                        <h3 class="group-title">肉(追加)</h3>
+                        <div class="group-head">
+                            <h3 class="group-title">肉(追加)</h3>
+                            <p class="group-note">もっと食べたい時のボリューム追加</p>
+                        </div>
                         <div class="button-list">
-                            <div class="menu-button">
-                                <div class="menu-name">とりもも</div>
-                                <div class="menu-price">550円</div>
-                            </div>
-                            <div class="menu-button">
-                                <div class="menu-name">せせり</div>
-                                <div class="menu-price">550円</div>
-                            </div>
                             <div class="menu-button">
                                 <div class="menu-name">ホルモン</div>
                                 <div class="menu-price">600円</div>
@@ -606,53 +733,73 @@
                                 <div class="menu-name">牛バラ</div>
                                 <div class="menu-price">600円</div>
                             </div>
+                            <div class="menu-button">
+                                <div class="menu-name">とりもも</div>
+                                <div class="menu-price">550円</div>
+                            </div>
+                            <div class="menu-button">
+                                <div class="menu-name">せせり</div>
+                                <div class="menu-price">550円</div>
+                            </div>
                         </div>
                     </section>
 
                     <section class="group-card">
-                        <h3 class="sub-block-title">その他 / ちょい足し</h3>
+                        <div class="group-head">
+                            <h3 class="sub-block-title">その他</h3>
+                            <p class="group-note">食感や〆の定番</p>
+                        </div>
                         <div class="button-list compact">
                             <div class="menu-button">
-                                <div class="menu-name">うどん</div>
-                                <div class="menu-price">300円</div>
-                            </div>
-                            <div class="menu-button">
-                                <div class="menu-name">もやし</div>
+                                <div class="menu-copy">
+                                    <div class="menu-name">もやし</div>
+                                    <p class="menu-note">シャキシャキ食感を追加</p>
+                                </div>
                                 <div class="menu-price">160円</div>
                             </div>
                             <div class="menu-button">
-                                <div class="menu-name">たまご</div>
+                                <div class="menu-copy">
+                                    <div class="menu-name">うどん</div>
+                                    <p class="menu-note">〆までしっかり楽しめる</p>
+                                </div>
+                                <div class="menu-price">300円</div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="group-card">
+                        <div class="group-head">
+                            <h3 class="sub-block-title">ちょい足し</h3>
+                            <p class="group-note">味変やコク足しに</p>
+                        </div>
+                        <div class="button-list compact">
+                            <div class="menu-button">
+                                <div class="menu-copy">
+                                    <div class="menu-name">たまご</div>
+                                    <p class="menu-note">辛さをまろやかに</p>
+                                </div>
                                 <div class="menu-price">150円</div>
                             </div>
                             <div class="menu-button">
-                                <div class="menu-name">チーズ</div>
+                                <div class="menu-copy">
+                                    <div class="menu-name">チーズ</div>
+                                    <p class="menu-note">コクを一気に底上げ</p>
+                                </div>
                                 <div class="menu-price">200円</div>
                             </div>
                             <div class="menu-button">
-                                <div class="menu-name">焼きタレ</div>
+                                <div class="menu-copy">
+                                    <div class="menu-name">焼きタレ</div>
+                                    <p class="menu-note">さらに濃い味に調整</p>
+                                </div>
                                 <div class="menu-price">0円</div>
                             </div>
                         </div>
                     </section>
                 </div>
 
-                <div class="section-hint step2" aria-hidden="true">
-                    <span class="section-hint-text">おすすめを確認</span>
-                    <span class="section-hint-arrow">→</span>
-                </div>
             </section>
 
-            <section class="section section-recommend">
-                <aside class="recommend-card">
-                    <div class="selector-badge recommend">おすすめ</div>
-                    <img class="recommend-thumb" src="https://placehold.jp/20/f1e5d9/8b6f57/180x180.png?text=SET"
-                        alt="おすすめセットのダミー画像" />
-                    <h4 class="recommend-title">人気セット</h4>
-                    <p class="recommend-text">
-                        ホルモンにチーズや卵を追加すると、<br>コクのある組み合わせになります。
-                    </p>
-                </aside>
-            </section>
         </div>
     </div>
 </body>
