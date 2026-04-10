@@ -10,27 +10,27 @@
             --viewport-width: 2040px;
             --viewport-height: 465px;
 
-            --bg-page: #d7d7d7;
-            --bg-canvas: #f6efe6;
-            --bg-card: #ffffff;
-            --bg-soft: #fbf7f2;
-            --bg-soft-2: #fffdfa;
+            --bg-page: #111111;
+            --bg-canvas: #181312;
+            --bg-card: #221a18;
+            --bg-soft: #2b211f;
+            --bg-soft-2: #332724;
 
-            --text-main: #2f2924;
-            --text-sub: #6d6258;
+            --text-main: #f7efe7;
+            --text-sub: #c9b9ac;
 
-            --step1-main: #8d1f1f;
-            --step1-soft: #f7e8e5;
+            --step1-main: #ff8b7c;
+            --step1-soft: #4a2420;
 
-            --step2-main: #6b3bbd;
-            --step2-soft: #efe4ff;
+            --step2-main: #b996ff;
+            --step2-soft: #35284f;
 
-            --recommend-main: #8a5a12;
-            --recommend-soft: #f7edd8;
+            --recommend-main: #e1b15c;
+            --recommend-soft: #4a3820;
 
-            --line: #eadfce;
-            --line-strong: #e2d3bf;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --line: #4a3a34;
+            --line-strong: #5d4941;
+            --shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
 
             --radius-xl: 20px;
             --radius-lg: 16px;
@@ -65,31 +65,6 @@
             padding: 8px 0;
         }
 
-        .history-entrypoint {
-            position: fixed;
-            top: 14px;
-            right: 14px;
-            z-index: 20;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            min-height: 44px;
-            padding: 0 14px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.94);
-            border: 1px solid #d8ccbc;
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 13px;
-            font-weight: 900;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-            backdrop-filter: blur(8px);
-        }
-
-        .history-entrypoint:hover {
-            background: #ffffff;
-        }
-
         .viewport {
             position: relative;
             width: var(--viewport-width);
@@ -119,7 +94,7 @@
         .section {
             position: relative;
             height: calc(var(--viewport-height) - (var(--screen-padding) * 2));
-            background: #f9f4ed;
+            background: #241b19;
             border: 1px solid var(--line);
             border-radius: var(--radius-xl);
             box-shadow: var(--shadow);
@@ -140,8 +115,8 @@
             width: 500px;
             padding: 12px;
             display: grid;
-            background: #f7f2ff;
-            border: 1px solid #e4d7fb;
+            background: #221a2d;
+            border: 1px solid #4a3a68;
             grid-template-rows: auto 1fr;
             gap: 10px;
         }
@@ -150,8 +125,8 @@
             width: 280px;
             padding: 12px;
             display: grid;
-            background: #faf3e6;
-            border: 1px solid #ead9b8;
+            background: #2c2417;
+            border: 1px solid #5f4b25;
             grid-template-rows: 1fr;
             gap: 10px;
         }
@@ -239,8 +214,8 @@
         }
 
         .selector-card {
-            background: #f2e7de;
-            border: 1px solid #e6cfc0;
+            background: #3a2724;
+            border: 1px solid #5b403b;
             padding: 12px 10px;
             display: grid;
             grid-template-rows: auto auto 1fr;
@@ -479,11 +454,34 @@
             font-weight: 900;
             color: var(--step1-main);
         }
+
+        .hero-title,
+        .section-title,
+        .selector-title,
+        .meat-name {
+            color: var(--text-main);
+        }
+
+        .section-note,
+        .selector-guide,
+        .recommend-text {
+            color: var(--text-sub);
+        }
+
+
+        .meat-photo {
+            width: 180px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            border: 2px solid #4a3a34;
+            background: #2b211f;
+        }
     </style>
 </head>
 
 <body>
-    <a class="history-entrypoint" href="history.html">コミット履歴を見る</a>
     <div class="viewport" aria-label="横スクロールメニュー">
         <div class="track">
             <section class="section section-meat">
@@ -491,7 +489,7 @@
                     <div class="section-title-wrap">
                         <div class="eyebrow">おすすめメニュー</div>
                         <h1 class="hero-title">辛🔥スタミナ焼き</h1>
-                        <p class="hero-price">680円〜</p>
+                        <p class="hero-price">一人前 680円〜</p>
                     </div>
                 </div>
 
@@ -534,9 +532,7 @@
                             <p class="meat-price">800円</p>
                         </div>
                         <div class="meat-photo-wrap">
-                            <img class="meat-photo"
-                                src="IMG_5244.jpeg"
-                                alt="ホルモンのダミー画像" />
+                            <img class="meat-photo" src="IMG_5244.jpeg" alt="ホルモンのダミー画像" />
                         </div>
                     </article>
 
@@ -566,7 +562,8 @@
                 </div>
 
                 <div class="section-hint" aria-hidden="true">
-                    <span class="section-hint-text">次は追加トッピング</span>
+                    <span class="section-hint-text">追加トッピングはこちら
+                    </span>
                     <span class="section-hint-arrow">→</span>
                 </div>
             </section>
