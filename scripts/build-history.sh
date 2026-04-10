@@ -46,7 +46,16 @@ for HASH in "$@"; do
     SNAPSHOT_PATH="$SNAPSHOT_DIR/$SNAPSHOT_NAME"
     DETAIL_PATH="$DETAIL_DIR/$DETAIL_NAME"
 
-    git -C "$ROOT_DIR" show "$HASH:$TARGET_FILE" > "$SNAPSHOT_PATH"
+    git -C "$ROOT_DIR" show "$HASH:$TARGET_FILE" \
+        | awk '
+            {
+                print
+                if (!inserted && $0 ~ /<head>/) {
+                    print "    <base href=\"../../\" />"
+                    inserted = 1
+                }
+            }
+        ' > "$SNAPSHOT_PATH"
 
     NEWER_LINK='<span class="nav-button disabled">← 新しいコミット</span>'
     OLDER_LINK='<span class="nav-button disabled">古いコミット →</span>'
