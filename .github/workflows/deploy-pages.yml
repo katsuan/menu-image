@@ -28,6 +28,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
       - name: Generate history pages
         run: |
           chmod +x scripts/build-history.sh
@@ -43,17 +46,10 @@ jobs:
             -exec cp -R {} dist/ \;
           touch dist/.nojekyll
 
-      - name: Archive Pages artifact
-        run: |
-          tar --create --file github-pages.tar --directory dist --dereference .
-          gzip --force github-pages.tar
-
       - name: Upload Pages artifact
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-pages-artifact@v4
         with:
-          name: github-pages
-          path: github-pages.tar.gz
-          retention-days: 1
+          path: dist
 
   deploy:
     needs: build
