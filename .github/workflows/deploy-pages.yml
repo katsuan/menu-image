@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
@@ -43,10 +43,17 @@ jobs:
             -exec cp -R {} dist/ \;
           touch dist/.nojekyll
 
+      - name: Archive Pages artifact
+        run: |
+          tar --create --file github-pages.tar --directory dist --dereference .
+          gzip --force github-pages.tar
+
       - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-artifact@v6
         with:
-          path: dist
+          name: github-pages
+          path: github-pages.tar.gz
+          retention-days: 1
 
   deploy:
     needs: build

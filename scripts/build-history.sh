@@ -48,17 +48,17 @@ for HASH in "$@"; do
 
     git -C "$ROOT_DIR" show "$HASH:$TARGET_FILE" > "$SNAPSHOT_PATH"
 
-    PREV_LINK='<span class="nav-button disabled">← 前のコミット</span>'
-    NEXT_LINK='<span class="nav-button disabled">次のコミット →</span>'
-
-    if [ "$INDEX" -gt 1 ]; then
-        PREV_NO=$(printf '%03d' "$((INDEX - 1))")
-        PREV_LINK="<a class=\"nav-button\" href=\"commit-$PREV_NO.html\">← 前のコミット</a>"
-    fi
+    NEWER_LINK='<span class="nav-button disabled">← 新しいコミット</span>'
+    OLDER_LINK='<span class="nav-button disabled">古いコミット →</span>'
 
     if [ "$INDEX" -lt "$TOTAL" ]; then
-        NEXT_NO=$(printf '%03d' "$((INDEX + 1))")
-        NEXT_LINK="<a class=\"nav-button\" href=\"commit-$NEXT_NO.html\">次のコミット →</a>"
+        NEWER_NO=$(printf '%03d' "$((INDEX + 1))")
+        NEWER_LINK="<a class=\"nav-button\" href=\"commit-$NEWER_NO.html\">← 新しいコミット</a>"
+    fi
+
+    if [ "$INDEX" -gt 1 ]; then
+        OLDER_NO=$(printf '%03d' "$((INDEX - 1))")
+        OLDER_LINK="<a class=\"nav-button\" href=\"commit-$OLDER_NO.html\">古いコミット →</a>"
     fi
 
     LATEST_BADGE=''
@@ -292,10 +292,10 @@ for HASH in "$@"; do
             </div>
 
             <div class="actions">
-                $PREV_LINK
+                $NEWER_LINK
                 <a class="nav-button" href="../history.html">一覧へ戻る</a>
                 <a class="nav-button" href="snapshots/$SNAPSHOT_NAME">この版を単体で開く</a>
-                $NEXT_LINK
+                $OLDER_LINK
             </div>
         </section>
 
@@ -316,7 +316,7 @@ EOF
         CARD_BADGE='<span class="card-badge">LATEST</span>'
     fi
 
-    CARDS="$CARDS
+    CARDS="
         <a class=\"commit-card\" href=\"history/$DETAIL_NAME\">
             <div class=\"card-top\">
                 <span class=\"card-no\">Commit No.$NO</span>
@@ -337,7 +337,7 @@ EOF
                     <dd>$AUTHOR_HTML</dd>
                 </div>
             </dl>
-        </a>"
+        </a>$CARDS"
 
     INDEX=$((INDEX + 1))
 done
@@ -590,7 +590,7 @@ cat > "$LIST_PAGE" <<EOF
                 </article>
                 <article class="summary-card">
                     <span class="summary-label">ORDER</span>
-                    <div class="summary-value">古い順 → 新しい順</div>
+                    <div class="summary-value">新しい順 → 古い順</div>
                 </article>
             </div>
         </section>
