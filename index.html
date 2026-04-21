@@ -214,15 +214,15 @@
         }
 
         .meat-top {
-            display: flex;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
             align-items: baseline;
-            justify-content: space-between;
             gap: 4px;
         }
 
         .meat-name {
             margin: 0;
-            font-size: 19px;
+            font-size: 24px;
             line-height: 1.2;
             font-weight: 800;
         }
@@ -235,6 +235,7 @@
             font-weight: 800;
             color: var(--step1-main);
             white-space: nowrap;
+            text-align: right;
         }
 
         .meat-photo-wrap {
@@ -310,6 +311,7 @@
             font-weight: 800;
             color: var(--step2-main);
             white-space: nowrap;
+            text-align: right;
         }
 
         .hero-title,
@@ -509,6 +511,7 @@
                 <div class="hero-selector">
                     <div class="hero-selector-head">
                         <h2 class="hero-selector-title">肉の種類</h2>
+                        <div class="hero-selector-tag">一人前から注文OK</div>
                         <div class="hero-selector-tag">組合せOK</div>
                         <p class="hero-selector-caution">※写真は各二人前</p>
                         <div class="hero-selector-arrow">追加はこちら →</div>
@@ -516,55 +519,56 @@
                 </div>
                 <div class="meat-grid">
                     <article class="meat-card">
-                        <div class="meat-rank">No.1</div>
                         <div class="meat-top">
+                            <!-- <div class="meat-rank">No.1</div> -->
                             <h3 class="meat-name">ホルモン</h3>
-                            <p class="meat-price">800円</p>
                         </div>
+                        <p class="meat-price">
+                            800円</p>
                         <div class="meat-photo-wrap">
                             <img class="meat-photo" src="src/ホルモン.jpg" alt="ホルモン" />
                         </div>
                     </article>
 
                     <article class="meat-card">
-                        <div class="meat-rank">うまみ</div>
                         <div class="meat-top">
+                            <!-- <div class="meat-rank">うまみ</div> -->
                             <h3 class="meat-name">ツラミ</h3>
-                            <p class="meat-price">800円</p>
                         </div>
+                        <p class="meat-price">800円</p>
                         <div class="meat-photo-wrap">
                             <img class="meat-photo" src="src/ツラミ.jpg" alt="ツラミ" />
                         </div>
                     </article>
 
                     <article class="meat-card">
-                        <div class="meat-rank">ボリューム</div>
+                        <!-- <div class="meat-rank">ボリューム</div> -->
                         <div class="meat-top">
                             <h3 class="meat-name">牛バラ</h3>
-                            <p class="meat-price">800円</p>
                         </div>
+                        <p class="meat-price">800円</p>
                         <div class="meat-photo-wrap">
                             <img class="meat-photo" src="src/牛バラ.jpg" alt="牛バラ" />
                         </div>
                     </article>
 
                     <article class="meat-card">
-                        <div class="meat-rank">定番</div>
+                        <!-- <div class="meat-rank">定番</div> -->
                         <div class="meat-top">
                             <h3 class="meat-name">とりもも</h3>
-                            <p class="meat-price">680円</p>
                         </div>
+                        <p class="meat-price">680円</p>
                         <div class="meat-photo-wrap">
                             <img class="meat-photo" src="src/とりもも.jpg" alt="とりもも" />
                         </div>
                     </article>
 
                     <article class="meat-card">
-                        <div class="meat-rank">コリコリ</div>
+                        <!-- <div class="meat-rank">コリコリ</div> -->
                         <div class="meat-top">
                             <h3 class="meat-name">せせり</h3>
-                            <p class="meat-price">680円</p>
                         </div>
+                        <p class="meat-price">680円</p>
                         <div class="meat-photo-wrap">
                             <img class="meat-photo" src="src/せせり.jpg" alt="せせり" />
                         </div>
@@ -575,10 +579,9 @@
             <section class="section section-toppings">
                 <div class="section-head">
                     <h2 class="section-title">追加トッピング</h2>
-                    <!-- <div class="section-badges">
-                        <div class="selector-badge step2">追加OK</div>
-                        <div class="selector-badge step2">味変OK</div>
-                    </div> -->
+                    <div class="section-badges">
+                        <div class="selector-badge step2">もっとおいしく</div>
+                    </div>
                 </div>
 
                 <div class="toppings-layout">
@@ -624,6 +627,10 @@
                                 <div class="menu-price">300円</div>
                             </div>
                             <div class="menu-button">
+                                <div class="menu-name">ごはん(小)</div>
+                                <div class="menu-price">200円</div>
+                            </div>
+                            <div class="menu-button">
                                 <div class="menu-name">ごはん(中)</div>
                                 <div class="menu-price">300円</div>
                             </div>
@@ -640,6 +647,10 @@
                         </div>
                         <div class="button-list">
                             <div class="menu-button">
+                                <div class="menu-name">たまご</div>
+                                <div class="menu-price">80円</div>
+                            </div>
+                            <div class="menu-button">
                                 <div class="menu-name">とろろたまご</div>
                                 <div class="menu-price">200円</div>
                             </div>
@@ -652,8 +663,8 @@
                                 <div class="menu-price">200円</div>
                             </div>
                             <div class="menu-button">
-                                <div class="menu-name">追加タレ</div>
-                                <div class="menu-price">0円</div>
+                                <div class="menu-name">自家製ヤンニンジャン</div>
+                                <div class="menu-price">100円</div>
                             </div>
                         </div>
                     </section>
