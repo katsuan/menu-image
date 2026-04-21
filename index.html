@@ -119,8 +119,12 @@
             width: 980px;
             padding: 12px;
             display: grid;
-            grid-template-rows: 186px 42px 1fr;
-            gap: 6px;
+            grid-template-rows: 190px 46px 1fr;
+            gap: 8px;
+            background: transparent;
+            border: 0;
+            border-radius: 0;
+            box-shadow: none;
         }
 
         .section-toppings {
@@ -135,7 +139,7 @@
 
         .section-head {
             display: flex;
-            align-items: end;
+            align-items: center;
             justify-content: space-between;
             gap: 12px;
         }
@@ -150,9 +154,9 @@
             align-items: center;
             justify-content: center;
             width: fit-content;
-            padding: 5px 10px;
+            padding: 7px 14px;
             border-radius: 999px;
-            font-size: 12px;
+            font-size: 15px;
             font-weight: 900;
             letter-spacing: 0.02em;
         }
@@ -170,7 +174,7 @@
 
         .hero-title {
             margin: 0;
-            font-size: 31px;
+            font-size: 36px;
             line-height: 1.02;
             font-weight: 900;
             letter-spacing: 0.01em;
@@ -178,24 +182,21 @@
 
         .section-title {
             margin: 0;
-            font-size: 28px;
+            font-size: 30px;
             line-height: 1.15;
             font-weight: 900;
         }
 
         .hero-price {
             margin: 4px 0 0;
-            font-size: 22px;
+            font-size: 28px;
             line-height: 1;
             font-weight: 900;
             color: var(--step1-main);
         }
 
         .section-note {
-            margin: 4px 0 0;
-            font-size: 11px;
-            line-height: 1.45;
-            color: var(--text-sub);
+            display: none;
         }
 
         .meat-grid {
@@ -233,7 +234,7 @@
 
         .meat-name {
             margin: 0;
-            font-size: 16px;
+            font-size: 18px;
             line-height: 1.2;
             font-weight: 900;
         }
@@ -241,7 +242,7 @@
         .meat-price {
             flex: 0 0 auto;
             margin: 0;
-            font-size: 15px;
+            font-size: 18px;
             line-height: 1;
             font-weight: 900;
             color: var(--step1-main);
@@ -273,30 +274,26 @@
         .group-card {
             padding: 10px;
             display: grid;
-            grid-template-rows: 50px 1fr;
+            grid-template-rows: 30px 1fr;
             gap: 8px;
         }
 
         .group-head {
             display: grid;
-            align-content: start;
-            gap: 2px;
+            align-content: center;
+            gap: 0;
         }
 
         .group-title {
             margin: 0;
-            font-size: 16px;
+            font-size: 18px;
             line-height: 1.2;
             font-weight: 900;
             color: var(--step2-main);
         }
 
         .group-note {
-            margin: 2px 0 0;
-            color: var(--text-sub);
-            font-size: 10px;
-            line-height: 1.35;
-            font-weight: 700;
+            display: none;
         }
 
         .button-list {
@@ -322,7 +319,7 @@
         }
 
         .menu-name {
-            font-size: 13px;
+            font-size: 15px;
             line-height: 1.3;
             font-weight: 800;
         }
@@ -334,15 +331,11 @@
         }
 
         .menu-note {
-            margin: 0;
-            color: var(--text-sub);
-            font-size: 10px;
-            line-height: 1.3;
-            font-weight: 700;
+            display: none;
         }
 
         .menu-price {
-            font-size: 14px;
+            font-size: 18px;
             line-height: 1;
             font-weight: 900;
             color: var(--step2-main);
@@ -350,8 +343,8 @@
         }
 
         .sub-block-title {
-            margin: 0 0 6px;
-            font-size: 14px;
+            margin: 0;
+            font-size: 18px;
             line-height: 1.2;
             font-weight: 900;
             color: var(--step2-main);
@@ -370,15 +363,15 @@
         .hero-panel {
             position: relative;
             display: grid;
-            grid-template-columns: minmax(0, 1.55fr) 220px;
-            gap: 12px;
-            padding: 14px;
+            grid-template-columns: minmax(0, 1.45fr) 236px;
+            gap: 14px;
+            padding: 16px;
             background:
                 linear-gradient(135deg, rgba(91, 33, 26, 0.96) 0%, rgba(39, 24, 24, 0.96) 50%, rgba(48, 26, 15, 0.96) 100%);
             border: 1px solid #6d4034;
             border-radius: 22px;
             overflow: hidden;
-            height: 186px;
+            height: 190px;
         }
 
         .hero-panel::before {
@@ -399,6 +392,14 @@
             gap: 6px;
         }
 
+        .hero-topline {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            align-items: start;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
         .hero-flavor {
             display: inline-flex;
             align-items: center;
@@ -412,30 +413,26 @@
         }
 
         .hero-subcopy {
-            margin: 0;
-            max-width: 600px;
-            color: #f0d8cd;
-            font-size: 11px;
-            line-height: 1.35;
-            font-weight: 700;
+            display: none;
         }
 
         .hero-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
+            gap: 8px;
+            align-items: center;
         }
 
         .hero-tag {
             display: inline-flex;
             align-items: center;
-            min-height: 24px;
-            padding: 0 10px;
+            min-height: 30px;
+            padding: 0 14px;
             border-radius: 999px;
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.1);
             color: #fff1ea;
-            font-size: 11px;
+            font-size: 14px;
             font-weight: 800;
             letter-spacing: 0.02em;
         }
@@ -470,8 +467,8 @@
             z-index: 1;
             display: grid;
             align-content: start;
-            gap: 6px;
-            padding: 10px;
+            gap: 0;
+            padding: 12px;
             background: rgba(17, 12, 12, 0.32);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 18px;
@@ -479,65 +476,56 @@
 
         .hero-photo {
             width: 100%;
-            height: 118px;
+            height: 126px;
             object-fit: cover;
             display: block;
             border-radius: 14px;
             border: 1px solid rgba(255, 255, 255, 0.14);
         }
 
-        .hero-stamp {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 24px;
-            padding: 0 9px;
-            border-radius: 999px;
-            background: linear-gradient(135deg, #ff8b7c 0%, #ffb55c 100%);
-            color: #2f120f;
+        .hero-photo-note {
+            margin-top: 6px;
+            color: rgba(247, 239, 231, 0.72);
             font-size: 10px;
-            font-weight: 900;
-            width: fit-content;
+            line-height: 1.2;
+            font-weight: 500;
+            text-align: right;
         }
 
         .choice-row-head {
             display: flex;
-            align-items: end;
+            align-items: center;
             justify-content: space-between;
-            gap: 10px;
+            gap: 12px;
         }
 
         .choice-copy {
             display: grid;
-            gap: 2px;
+            gap: 0;
         }
 
         .choice-title {
             margin: 0;
-            font-size: 20px;
+            font-size: 24px;
             line-height: 1.1;
             font-weight: 900;
         }
 
         .choice-note {
-            margin: 0;
-            color: var(--text-sub);
-            font-size: 10px;
-            line-height: 1.25;
-            font-weight: 700;
+            display: none;
         }
 
         .choice-flow {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            min-height: 32px;
-            padding: 0 12px;
+            gap: 10px;
+            min-height: 36px;
+            padding: 0 14px;
             border-radius: 999px;
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.08);
             color: #ffddcf;
-            font-size: 11px;
+            font-size: 13px;
             font-weight: 900;
             letter-spacing: 0.06em;
         }
@@ -550,12 +538,12 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            min-height: 20px;
-            padding: 0 8px;
+            min-height: 26px;
+            padding: 0 12px;
             border-radius: 999px;
             background: rgba(255, 139, 124, 0.16);
             color: #ffb4a8;
-            font-size: 10px;
+            font-size: 13px;
             font-weight: 900;
             width: fit-content;
         }
@@ -599,30 +587,22 @@
             <section class="section section-meat">
                 <div class="hero-panel">
                     <div class="hero-copy">
-                        <div class="eyebrow">おすすめメニュー</div>
+                        <div class="hero-topline">
+                            <div class="eyebrow">おすすめメニュー</div>
+                            <div class="hero-tags">
+                                <span class="hero-tag">お酒がすすむ</span>
+                                <span class="hero-tag">ごはんもすすむ</span>
+                                <span class="hero-tag">迷ったらホルモン！</span>
+                            </div>
+                        </div>
                         <div>
                             <h1 class="hero-title">辛🔥スタミナ焼き</h1>
                             <p class="hero-price">一人前 680円〜 / 人気No.1 ホルモン 800円</p>
                         </div>
-                        <p class="hero-subcopy">
-                            肉をひとつ選ぶだけ。濃い焼きダレとクセになる辛みで、
-                            食欲を引き上げる主役メニュー。
-                        </p>
-                        <p class="hero-subcopy">
-                            甘辛だれが肉に絡んで、お酒もごはんも止まらない。
-                            迷ったらホルモン、濃厚にいくならツラミが推し。
-                        </p>
-                        <div class="hero-tags">
-                            <span class="hero-tag">お酒がすすむ</span>
-                            <span class="hero-tag">ごはんもすすむ</span>
-                            <span class="hero-tag">一人で食べてもみんなで食べても最高！</span>
-                            <span class="hero-tag">迷ったらホルモン！</span>
-                        </div>
-
                     </div>
                     <aside class="hero-photo-card">
-                        <div class="hero-stamp">HOT🌶️ &amp; POWER💪</div>
                         <img class="hero-photo" src="src/ホルモン.jpg" alt="辛スタミナ焼き" />
+                        <div class="hero-photo-note">※写真は二人前です</div>
                     </aside>
                 </div>
 
@@ -703,12 +683,13 @@
             <section class="section section-toppings">
                 <div class="section-head">
                     <div class="section-title-wrap">
-                        <h2 class="section-title">追加トッピング</h2>
+                        <h2 class="section-title">追加トッピング
+                            <div class="selector-badge step2">もっとたくさん</div>
+                            <div class="selector-badge step2">更においしく</div>
+                        </h2>
                         <p class="section-note">
                             肉の追加で満足感さらにアップ！うどんは〆に！たまごやチーズで味変も！
                         </p>
-                        <div class="selector-badge step2">もっとたくさん</div>
-                        <div class="selector-badge step2">更においしく</div>
                     </div>
                 </div>
 
