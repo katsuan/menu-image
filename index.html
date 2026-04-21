@@ -16,8 +16,6 @@
             --bg-soft-2: #332724;
 
             --text-main: #f7efe7;
-            --text-sub: #c9b9ac;
-
             --step1-main: #ff8b7c;
             --step1-soft: #4a2420;
 
@@ -31,9 +29,9 @@
             --radius-lg: 16px;
             --radius-md: 12px;
 
-            --screen-padding: 12px;
-            --section-gap: 12px;
-            --inner-gap: 10px;
+            --screen-padding: 8px;
+            --section-gap: 8px;
+            --inner-gap: 6px;
         }
 
         * {
@@ -82,17 +80,6 @@
             display: none;
         }
 
-        .viewport::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 180px;
-            height: 100%;
-            pointer-events: none;
-            z-index: 12;
-        }
-
         .track {
             display: flex;
             align-items: stretch;
@@ -117,10 +104,10 @@
 
         .section-meat {
             width: 980px;
-            padding: 12px;
+            padding: 8px;
             display: grid;
-            grid-template-rows: 190px 46px 1fr;
-            gap: 8px;
+            grid-template-rows: 190px auto 1fr;
+            gap: 6px;
             background: transparent;
             border: 0;
             border-radius: 0;
@@ -129,23 +116,26 @@
 
         .section-toppings {
             width: 920px;
-            padding: 12px;
+            padding: 8px;
             display: grid;
             background: #221a2d;
             border: 1px solid #4a3a68;
             grid-template-rows: auto 1fr;
-            gap: 10px;
+            gap: 8px;
         }
 
         .section-head {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 12px;
+            gap: 10px;
         }
 
-        .section-title-wrap {
-            min-width: 0;
+        .section-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            justify-content: flex-end;
         }
 
         .eyebrow,
@@ -161,8 +151,7 @@
             letter-spacing: 0.02em;
         }
 
-        .eyebrow,
-        .selector-badge.step1 {
+        .eyebrow {
             background: var(--step1-soft);
             color: var(--step1-main);
         }
@@ -182,6 +171,7 @@
 
         .section-title {
             margin: 0;
+            padding: 5px 10px 7px;
             font-size: 30px;
             line-height: 1.15;
             font-weight: 900;
@@ -189,14 +179,10 @@
 
         .hero-price {
             margin: 4px 0 0;
-            font-size: 28px;
+            font-size: 29px;
             line-height: 1;
             font-weight: 900;
             color: var(--step1-main);
-        }
-
-        .section-note {
-            display: none;
         }
 
         .meat-grid {
@@ -215,10 +201,10 @@
         }
 
         .meat-card {
-            padding: 8px 8px 10px;
+            padding: 7px;
             display: grid;
-            grid-template-rows: auto auto 1fr;
-            gap: 6px;
+            grid-template-rows: 26px auto 1fr;
+            gap: 5px;
             background:
                 linear-gradient(180deg, rgba(70, 46, 42, 0.98) 0%, rgba(44, 31, 28, 0.98) 100%);
             border-color: #5c4741;
@@ -227,9 +213,9 @@
 
         .meat-top {
             display: flex;
-            align-items: start;
+            align-items: baseline;
             justify-content: space-between;
-            gap: 6px;
+            gap: 4px;
         }
 
         .meat-name {
@@ -242,7 +228,7 @@
         .meat-price {
             flex: 0 0 auto;
             margin: 0;
-            font-size: 18px;
+            font-size: 19px;
             line-height: 1;
             font-weight: 900;
             color: var(--step1-main);
@@ -251,13 +237,13 @@
 
         .meat-photo-wrap {
             display: grid;
-            place-items: center;
+            place-items: stretch;
         }
 
         .meat-photo {
-            width: 148px;
-            height: 94px;
-            border-radius: 18px;
+            width: 100%;
+            height: 110px;
+            border-radius: 14px;
             object-fit: cover;
             display: block;
             border: 1px solid #5d4941;
@@ -267,15 +253,15 @@
         .toppings-layout {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 10px;
+            gap: 8px;
             min-height: 0;
         }
 
         .group-card {
-            padding: 10px;
+            padding: 8px;
             display: grid;
-            grid-template-rows: 30px 1fr;
-            gap: 8px;
+            grid-template-rows: 24px 1fr;
+            gap: 6px;
         }
 
         .group-head {
@@ -292,46 +278,28 @@
             color: var(--step2-main);
         }
 
-        .group-note {
-            display: none;
-        }
-
         .button-list {
             display: grid;
-            gap: 8px;
-            align-content: start;
-        }
-
-        .button-list.compact {
             gap: 6px;
+            align-content: start;
         }
 
         .menu-button {
             display: grid;
             grid-template-columns: 1fr auto;
-            gap: 8px;
+            gap: 6px;
             align-items: center;
-            padding: 12px 12px;
+            min-height: 54px;
+            padding: 12px;
             border-radius: var(--radius-md);
             background: var(--bg-soft-2);
             border: 1px solid var(--line);
-            min-height: 0;
         }
 
         .menu-name {
             font-size: 15px;
             line-height: 1.3;
             font-weight: 800;
-        }
-
-        .menu-copy {
-            display: grid;
-            gap: 2px;
-            min-width: 0;
-        }
-
-        .menu-note {
-            display: none;
         }
 
         .menu-price {
@@ -342,30 +310,18 @@
             white-space: nowrap;
         }
 
-        .sub-block-title {
-            margin: 0;
-            font-size: 18px;
-            line-height: 1.2;
-            font-weight: 900;
-            color: var(--step2-main);
-        }
-
         .hero-title,
         .section-title,
         .meat-name {
             color: var(--text-main);
         }
 
-        .section-note {
-            color: var(--text-sub);
-        }
-
         .hero-panel {
             position: relative;
             display: grid;
             grid-template-columns: minmax(0, 1.45fr) 236px;
-            gap: 14px;
-            padding: 16px;
+            gap: 10px;
+            padding: 12px;
             background:
                 linear-gradient(135deg, rgba(91, 33, 26, 0.96) 0%, rgba(39, 24, 24, 0.96) 50%, rgba(48, 26, 15, 0.96) 100%);
             border: 1px solid #6d4034;
@@ -389,38 +345,88 @@
             z-index: 1;
             display: grid;
             align-content: start;
-            gap: 6px;
+            gap: 4px;
         }
 
         .hero-topline {
             display: grid;
             grid-template-columns: auto 1fr;
             align-items: start;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .hero-flavor {
-            display: inline-flex;
-            align-items: center;
-            min-height: 26px;
-            padding: 0 10px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.08);
-            color: #ffd9cf;
-            font-size: 11px;
-            font-weight: 800;
-        }
-
-        .hero-subcopy {
-            display: none;
+            gap: 8px;
+            margin-bottom: 8px;
         }
 
         .hero-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 8px;
+            gap: 6px;
             align-items: center;
+        }
+
+        .hero-selector {
+            display: grid;
+            gap: 0;
+        }
+
+        .hero-selector-head {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .hero-selector-title {
+            margin: 0;
+            font-size: 25px;
+            line-height: 1.08;
+            font-weight: 500;
+        }
+
+        .hero-selector-note {
+            margin: 0;
+            color: rgba(247, 239, 231, 0.76);
+            font-size: 15px;
+            line-height: 1.25;
+            font-weight: 500;
+        }
+
+        .hero-selector-caution {
+            margin: 0;
+            color: rgba(247, 239, 231, 0.68);
+            font-size: 14px;
+            line-height: 1.2;
+            font-weight: 500;
+        }
+
+        .hero-selector-tag {
+            display: inline-flex;
+            align-items: center;
+            min-height: 28px;
+            padding: 0 12px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff1ea;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+
+        .hero-selector-arrow {
+            display: inline-flex;
+            align-items: center;
+            min-height: 32px;
+            margin-left: auto;
+            padding: 0 14px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #ffcfbe;
+            font-size: 13px;
+            line-height: 1;
+            font-weight: 700;
+            white-space: nowrap;
         }
 
         .hero-tag {
@@ -437,38 +443,13 @@
             letter-spacing: 0.02em;
         }
 
-        .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 8px 10px;
-            background: rgba(15, 10, 10, 0.24);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 16px;
-            width: fit-content;
-        }
-
-        .hero-cta-main {
-            font-size: 14px;
-            line-height: 1.2;
-            font-weight: 900;
-            color: #fff7f1;
-        }
-
-        .hero-cta-arrow {
-            font-size: 16px;
-            line-height: 1;
-            font-weight: 900;
-            color: var(--step1-main);
-        }
-
         .hero-photo-card {
             position: relative;
             z-index: 1;
             display: grid;
             align-content: start;
             gap: 0;
-            padding: 12px;
+            padding: 8px;
             background: rgba(17, 12, 12, 0.32);
             border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 18px;
@@ -476,62 +457,11 @@
 
         .hero-photo {
             width: 100%;
-            height: 126px;
+            height: 138px;
             object-fit: cover;
             display: block;
             border-radius: 14px;
             border: 1px solid rgba(255, 255, 255, 0.14);
-        }
-
-        .hero-photo-note {
-            margin-top: 6px;
-            color: rgba(247, 239, 231, 0.72);
-            font-size: 10px;
-            line-height: 1.2;
-            font-weight: 500;
-            text-align: right;
-        }
-
-        .choice-row-head {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-        }
-
-        .choice-copy {
-            display: grid;
-            gap: 0;
-        }
-
-        .choice-title {
-            margin: 0;
-            font-size: 24px;
-            line-height: 1.1;
-            font-weight: 900;
-        }
-
-        .choice-note {
-            display: none;
-        }
-
-        .choice-flow {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            min-height: 36px;
-            padding: 0 14px;
-            border-radius: 999px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            color: #ffddcf;
-            font-size: 13px;
-            font-weight: 900;
-            letter-spacing: 0.06em;
-        }
-
-        .choice-flow.step2 {
-            color: #ffcfbe;
         }
 
         .meat-rank {
@@ -548,36 +478,6 @@
             width: fit-content;
         }
 
-        .scroll-indicator {
-            position: absolute;
-            right: 22px;
-            bottom: 18px;
-            z-index: 16;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            min-height: 46px;
-            padding: 0 16px;
-            border-radius: 999px;
-            background: rgba(255, 250, 244, 0.96);
-            border: 1px solid rgba(255, 207, 185, 0.5);
-            color: #43231c;
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.22);
-            pointer-events: none;
-        }
-
-        .scroll-indicator-label {
-            font-size: 13px;
-            font-weight: 900;
-            white-space: nowrap;
-        }
-
-        .scroll-indicator-arrow {
-            font-size: 18px;
-            line-height: 1;
-            font-weight: 900;
-            color: var(--step1-main);
-        }
     </style>
 </head>
 
@@ -599,21 +499,20 @@
                             <h1 class="hero-title">辛🔥スタミナ焼き</h1>
                             <p class="hero-price">一人前 680円〜 / 人気No.1 ホルモン 800円</p>
                         </div>
+                        <p class="hero-selector-note">肉の種類を下からお選びください</p>
                     </div>
                     <aside class="hero-photo-card">
                         <img class="hero-photo" src="src/ホルモン.jpg" alt="辛スタミナ焼き" />
-                        <div class="hero-photo-note">※写真は二人前です</div>
                     </aside>
                 </div>
-
-                <div class="choice-row-head">
-                    <div class="choice-copy">
-                        <h2 class="choice-title">肉の種類を選ぶ</h2>
-                        <p class="choice-note">迷ったら人気No.1のホルモン。定番から濃厚系まで、気になる肉をそのまま選択。追加トッピングでさらに広がる美味しさ！ ※写真は二人前</p>
+                <div class="hero-selector">
+                    <div class="hero-selector-head">
+                        <h2 class="hero-selector-title">肉の種類を選ぶ</h2>
+                        <div class="hero-selector-tag">組み合わせ注文OK（一皿で提供）</div>
+                        <p class="hero-selector-caution">※掲載写真は各二人前です</p>
+                        <div class="hero-selector-arrow">追加はこちら →</div>
                     </div>
-                    <div class="choice-flow step2">追加トッピングはこちら →</div>
                 </div>
-
                 <div class="meat-grid">
                     <article class="meat-card">
                         <div class="meat-rank">人気No.1</div>
@@ -682,14 +581,10 @@
 
             <section class="section section-toppings">
                 <div class="section-head">
-                    <div class="section-title-wrap">
-                        <h2 class="section-title">追加トッピング
-                            <div class="selector-badge step2">もっとたくさん</div>
-                            <div class="selector-badge step2">更においしく</div>
-                        </h2>
-                        <p class="section-note">
-                            肉の追加で満足感さらにアップ！うどんは〆に！たまごやチーズで味変も！
-                        </p>
+                    <h2 class="section-title">追加トッピング</h2>
+                    <div class="section-badges">
+                        <div class="selector-badge step2">もっとたくさん</div>
+                        <div class="selector-badge step2">更においしく</div>
                     </div>
                 </div>
 
@@ -697,7 +592,6 @@
                     <section class="group-card">
                         <div class="group-head">
                             <h3 class="group-title">肉(追加)</h3>
-                            <p class="group-note">もっと食べたい時のボリューム追加</p>
                         </div>
                         <div class="button-list">
                             <div class="menu-button">
@@ -725,36 +619,23 @@
 
                     <section class="group-card">
                         <div class="group-head">
-                            <h3 class="sub-block-title">その他</h3>
-                            <p class="group-note">食感や〆の定番</p>
+                            <h3 class="group-title">その他</h3>
                         </div>
-                        <div class="button-list compact">
+                        <div class="button-list">
                             <div class="menu-button">
-                                <div class="menu-copy">
-                                    <div class="menu-name">もやし</div>
-                                    <p class="menu-note">シャキシャキ食感を追加</p>
-                                </div>
+                                <div class="menu-name">もやし</div>
                                 <div class="menu-price">160円</div>
                             </div>
                             <div class="menu-button">
-                                <div class="menu-copy">
-                                    <div class="menu-name">うどん</div>
-                                    <p class="menu-note">〆までしっかり楽しめる</p>
-                                </div>
+                                <div class="menu-name">うどん</div>
                                 <div class="menu-price">300円</div>
                             </div>
                             <div class="menu-button">
-                                <div class="menu-copy">
-                                    <div class="menu-name">ごはん(中)</div>
-                                    <p class="menu-note">スタミナ焼きとの相性抜群</p>
-                                </div>
+                                <div class="menu-name">ごはん(中)</div>
                                 <div class="menu-price">300円</div>
                             </div>
                             <div class="menu-button">
-                                <div class="menu-copy">
-                                    <div class="menu-name">ごはん(大)</div>
-                                    <p class="menu-note">スタミナ焼きとの相性抜群</p>
-                                </div>
+                                <div class="menu-name">ごはん(大)</div>
                                 <div class="menu-price">400円</div>
                             </div>
                         </div>
@@ -762,35 +643,23 @@
 
                     <section class="group-card">
                         <div class="group-head">
-                            <h3 class="sub-block-title">ちょい足し</h3>
-                            <p class="group-note">味変やコク足しに</p>
+                            <h3 class="group-title">ちょい足し</h3>
                         </div>
-                        <div class="button-list compact">
+                        <div class="button-list">
                             <div class="menu-button">
-                                <div class="menu-copy">
-                                    <div class="menu-name">とろろたまご</div>
-                                    <p class="menu-note">辛さをまろやかに</p>
-                                </div>
+                                <div class="menu-name">とろろたまご</div>
                                 <div class="menu-price">200円</div>
                             </div>
                             <div class="menu-button">
-                                <div class="menu-copy">
-                                    <div class="menu-name">チーズ</div>
-                                    <p class="menu-note">コクを一気に底上げ</p>
-                                </div>
+                                <div class="menu-name">チーズ</div>
                                 <div class="menu-price">200円</div>
                             </div>
                             <div class="menu-button">
-                                <div class="menu-copy">
-                                    <div class="menu-name">悪魔のニンニクアブラ</div>
-                                    <p class="menu-note">食べて口福 余韻は幸臭</p>
-                                </div>
+                                <div class="menu-name">悪魔のニンニクアブラ</div>
                                 <div class="menu-price">200円</div>
                             </div>
                             <div class="menu-button">
-                                <div class="menu-copy">
-                                    <div class="menu-name">追加タレ</div>
-                                </div>
+                                <div class="menu-name">追加タレ</div>
                                 <div class="menu-price">0円</div>
                             </div>
                         </div>
